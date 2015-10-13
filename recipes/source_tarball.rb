@@ -21,8 +21,7 @@ bash 'install_nzbget' do
   code <<-EOH
   mkdir nzbget-#{source_version}
   tar -zxf nzbget-#{source_version}.tar.gz -C nzbget-#{source_version} --strip-components 1
-  (cd nzbget-#{source_version}/ && ./configure #{conf_opts} && make && make install)
-  make install-conf
+  (cd nzbget-#{source_version}/ && ./configure #{conf_opts} && make && make install && make install-conf)
   EOH
   action :nothing
 end

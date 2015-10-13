@@ -1,0 +1,14 @@
+# NZBGet Service Job File
+# Note: I only wrote the init script.
+# Full NZBGet Source at https://github.com/nzbget/nzbget
+
+description "NZBGet Daemon"
+
+author "J.Morgan Lieberthal <morgan@jmorgan.org>"
+
+start on runlevel [2345]
+stop on runlevel [016]
+respawn
+expect fork
+
+exec /usr/local/nzbget -D
